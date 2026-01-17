@@ -3,7 +3,7 @@ name: Start Azure VM (Morning)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 0 * * *'   # 6:00 AM IST
+    - cron: '30 0 * * *'   # 00:30 UTC = 6:00 AM IST (India Standard Time)
 
 jobs:
   start-vm:
