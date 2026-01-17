@@ -23,4 +23,4 @@ jobs:
         run: |
           az vm deallocate \
             --resource-group Neeraj_azure_VM \
-            --name Neerajn8n
+            --name myVm
