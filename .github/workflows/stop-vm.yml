@@ -1,18 +1,19 @@
-name: Stop Azure VM
+name: Stop Azure VM (Night)
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 18 * * *'   # 11:30 PM IST
 
 jobs:
   stop-vm:
     runs-on: ubuntu-latest
-
     permissions:
       id-token: write
       contents: read
 
     steps:
-      - name: Azure Login using OIDC
+      - name: Azure Login (OIDC)
         uses: azure/login@v1
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
